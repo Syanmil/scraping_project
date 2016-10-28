@@ -15,7 +15,7 @@ function scrapePage(){
     fs.writeFile('header.json', JSON.stringify($header), function(err){
       console.log('header.html successfully written');
     })
-    fs.writeFile('content.json', JSON.stringify($content), function(err){
+    fs.writeFile('content.json', JSON.stringify($content, null, '\n'), function(err){
       console.log('content.html successfully written');
     })
     fs.writeFile('footer.json', JSON.stringify($footer), function(err){
