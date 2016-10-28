@@ -21,13 +21,18 @@
          release = data.children().last().text();
          json.title = title;
          json.release = release;
+      })
+
       $('.star.box-giga-star').filter(function(){
          var data = $(this);
          rating = data.text();
          json.rating = rating;
-      })   
-       })
-     }
+      })
+      }
+      fs.writeFile('output.json', JSON.stringify(json, null, 4), function(err){
+         console.log('File successfully writen!');
+      })
+      res.send('check output file in module')
    })
  })
 
